@@ -34,18 +34,26 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `pseudo` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
-  `cash` int(11) NOT NULL,
-  `kills` int(11) NOT NULL,
-  `deaths` int(11) NOT NULL,
-  `experience` int(11) NOT NULL,
-  `telNumber` int(11) NOT NULL,
-  `skin` int(11) NOT NULL,
-  `idInventory` int(11) NOT NULL,
-  `gender` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `characters`;
+CREATE TABLE IF NOT EXISTS `characters` (
+	`id` int(11) NOT NULL AUTO_INCREMENT;
+	`name`varchar(50) NOT NULL,
+	`fingerprint` varchar(512),
+	`cash` int(11) NOT NULL,
+	`kills` int(11) NOT NULL,
+	`deaths` int(11) NOT NULL,
+	`experience` int(11) NOT NULL,
+	`telNumber` int(11) NOT NULL,
+	`skin` int(11) NOT NULL,
+	`idInventory` int(11) NOT NULL,
+	`gender` int(11) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Structure de la table `bans`

@@ -143,4 +143,3 @@ const BULLET_SYNC = 206;
 #define RPC_ScrSetPlayerDrunkLevel   35 
 #define RPC_ScrDialogBox   61 
 #define RPC_ScrCreate3DTextLabel   36 
-

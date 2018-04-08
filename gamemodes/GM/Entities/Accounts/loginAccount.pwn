@@ -2,8 +2,9 @@
   Login Account
 */
 
-forward CheckPass(playerid);
+#include "GM/Entities/Characters/charLoad.pwn"
 
+forward CheckPass(playerid);
 /**----------------------------------------------------**/
 
 Dialog:Login(playerid, response, listitem, inputtext[])
@@ -34,7 +35,10 @@ public CheckPass(playerid)
 		return Dialog_Show(playerid, Login, DIALOG_STYLE_PASSWORD, "Login", "Error :( Password Incorrect: Please insert your Password to login", "Login", "Cancel");
 	else
 	{
-		//spawn
+		cache_get_value_name_int(0, "id", gAccInfos[playerid][accSqlID]);
+		cache_get_value_name(0, "pseudo", gAccInfos[playerid][accNickname]);
+		cache_get_value_name(0, "mail"; gAccInfos[playerid][accMail]);
+		LoadCharacter(gAccInfos[playerid][accSqlID]);
 	}
 
 	return 1;

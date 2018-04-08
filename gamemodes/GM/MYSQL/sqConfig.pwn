@@ -3,6 +3,7 @@
 */
 
 #define ACCOUNTS_TAB "accounts"
+#define CHAR_TAB "characters"  
 #define BUSINESS_TAB "business"
 #define HOUSES_TAB "houses"
 #define VEHICLES_TAB "vehicles"

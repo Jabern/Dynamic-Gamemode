@@ -7,19 +7,31 @@
 #endif 
 #define CLIENT_AC
 
+
 public OnIncomingRPC(playerid, rpcid, BitStream:bs)
 {
 	switch(rpcid)
 	{
 		case RPC_ClientJoin: 
 		{
+			/*
+				INT32 iVersion, 
+				UINT8 byteMod, 
+				UINT8 byteNicknameLen, 
+				char NickName[], 
+				UINT32 uiClientChallengeResponse, 
+				UINT8 byteAuthKeyLen, 
+				char auth_key[], 
+				UINT8 iClientVerLen, 
+				char ClientVersion[]
+			*/			
 			new iVersion,
 				byteMod,
-				byteNameLen,
+				byteNicknameLen,
 				NickName[24],
 				uiClientChallengeResponse,
-				byteAuthBSLen,
-				auth_bs[4*16],
+				byteAuthKeyLen,
+				auth_key[4*16],
 				iClientVerLen,
 				ClientVersion[30];
 
@@ -27,15 +39,14 @@ public OnIncomingRPC(playerid, rpcid, BitStream:bs)
 				bs,
 				PR_INT32, iVersion,
 				PR_UINT8, byteMod,
-				PR_UINT8, byteNameLen,
-				PR_STRING, NickName, byteNameLen,
+				PR_UINT8, byteNicknameLen,
+				PR_STRING, NickName, byteNicknameLen,
 				PR_UINT32, uiClientChallengeResponse,
-				PR_UINT8, byteAuthBSLen,
-				PR_STRING, auth_bs, byteAuthBSLen,
+				PR_UINT8, byteAuthKeyLen,
+				PR_STRING, auth_key, byteAuthKeyLen,
 				PR_UINT8, iClientVerLen,
 				PR_STRING, ClientVersion, iClientVerLen
-			);			
-
+			);		
 		}
 	}	
 	return 1;

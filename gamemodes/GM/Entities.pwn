@@ -10,6 +10,8 @@
 
 #include "GM/Entities/Accounts/loadAccount.pwn"
 
+#include "GM/Entities/Characters/charLoad.pwn"
+
 #include "GM/Entities/Business/loadBusiness.pwn"
 
 #include "GM/Entities/Houses/loadHouses.pwn"
